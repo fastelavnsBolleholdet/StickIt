@@ -45,7 +45,8 @@ fun FrontPageGIF(modifier: Modifier = Modifier) {
     Box(
         modifier = Modifier
             .fillMaxWidth() // Fill the width of the screen
-            .fillMaxHeight(), // Ensures the Box fills the available height
+            .fillMaxHeight()
+            .padding(start = 20.dp, end = 20.dp), // Ensures the Box fills the available height
         contentAlignment = Alignment.Center // Center content at the bottom
     ) {
         AndroidView(
@@ -60,7 +61,7 @@ fun FrontPageGIF(modifier: Modifier = Modifier) {
             },
             update = { webView ->
                 // Load the GIF into the WebView from assets or a URL
-                webView.loadUrl("https://media.tenor.com/z5DCfb9BcwwAAAAi/catching-fly-using-chopstick-miyagi.gif") // Or a URL
+                webView.loadUrl("https://heysherroll.wordpress.com/wp-content/uploads/2016/02/102935-kung-fu-panda-chopsticks-gif-i-ptaz.gif") // Or a URL
             }
         )
     }
