@@ -1,5 +1,6 @@
 package com.example.stickitapp.frontPage
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,46 +16,53 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.stickitapp.ui.theme.green
+import com.example.stickitapp.ui.theme.yellowy
 
 @Composable
 fun FrontPage(navigateLoadingScreen: () -> Unit) {
 
     val frontPageViewModel = viewModel<frontPageViewModel>()
 
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Top,
-        modifier = Modifier.fillMaxSize()
+    Box (
+        Modifier.background(color = yellowy)
     ) {
-        Text(
-            text = "Welcome!",
-            modifier = Modifier.padding(top = 50.dp)
-        )
-    }
-    Column (
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-        modifier = Modifier.fillMaxSize()
-    ) {
-        Text(text = "How would you like to stick it?")
-
-        Button(
-            onClick = { frontPageViewModel.moveToLoadingScreen(navigateLoadingScreen) },
-            modifier = Modifier.padding(top = 16.dp)
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Top,
+            modifier = Modifier.fillMaxSize()
         ) {
-            Text(text = "Click here for a sticky challenge")
-        }
-    }
-    Column (
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Bottom,
-        modifier = Modifier.fillMaxSize().padding(100.dp)
-    ) {
-        Box {
             Text(
-                text = "This app works by giving you a chopstick challenge for you to complete in a given timeframe. If you are lucky you will get a rating",
-                textAlign = TextAlign.Center
+                text = "Welcome!",
+                modifier = Modifier.padding(top = 50.dp), color = green
             )
+        }
+        Column (
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxSize()
+        ) {
+            Text(text = "How would you like to stick it?")
+
+            Button(
+                onClick = { frontPageViewModel.moveToLoadingScreen(navigateLoadingScreen) },
+                modifier = Modifier.padding(top = 16.dp)
+            ) {
+                Text(text = "Click here for a sticky challenge")
+            }
+        }
+        Column (
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Bottom,
+            modifier = Modifier.fillMaxSize().padding(100.dp)
+        ) {
+            Box {
+                Text(
+                    text = "This app works by giving you a chopstick challenge for you to complete in a given timeframe. If you are lucky you will get a rating",
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                )
+            }
         }
     }
 }
