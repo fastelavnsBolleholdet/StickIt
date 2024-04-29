@@ -45,7 +45,7 @@ fun ShowGifWithWebView(modifier: Modifier = Modifier) {
         modifier = Modifier
             .fillMaxWidth() // Fill the width of the screen
             .fillMaxHeight(), // Ensures the Box fills the available height
-        contentAlignment = Alignment.BottomCenter // Center content at the bottom
+        contentAlignment = Alignment.Center // Center content at the bottom
     ) {
         AndroidView(
             modifier = modifier.fillMaxWidth(), // Fill the width of the screen
@@ -90,7 +90,7 @@ fun Welcome(navigateFrontPage: () -> Unit) {
         Row {
             Box(
                 modifier = Modifier
-                    .fillMaxWidth(0.8F)
+                    .fillMaxWidth()
                     .clickable(onClick = {
                         welcomeViewModel.moveToFrontPage(
                             navigateFrontPage
