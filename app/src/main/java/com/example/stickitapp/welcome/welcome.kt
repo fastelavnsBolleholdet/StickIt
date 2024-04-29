@@ -35,8 +35,11 @@ import com.example.stickitapp.ui.theme.playFairDisplayFontFamily
 import androidx.compose.foundation.clickable
 import android.webkit.WebView
 import androidx.compose.animation.animateContentSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.input.nestedscroll.nestedScrollModifierNode
 import androidx.compose.ui.viewinterop.AndroidView
+import com.example.stickitapp.ui.theme.burger
+import com.example.stickitapp.ui.theme.salmon
 
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
@@ -70,12 +73,18 @@ fun Welcome(navigateFrontPage: () -> Unit) {
 
     val welcomeViewModel = viewModel<welcomeViewModel>()
     Column(modifier = Modifier
-        .background(color = Dusty)
+        .background(color = burger)
+        .clickable(onClick = {
+            welcomeViewModel.moveToFrontPage(
+                navigateFrontPage
+            )
+        }
+        )
     ) {
         Spacer(modifier = Modifier.width(16.dp))
         Row {
             Box(modifier = Modifier
-                .background(color = Dusty)
+                .background(color = burger)
                 .fillMaxWidth()
                 .fillMaxHeight(0.4f),
                 contentAlignment = Alignment.Center
@@ -83,14 +92,16 @@ fun Welcome(navigateFrontPage: () -> Unit) {
                 Text(text = "Stick It !",
                     fontFamily = jaldiBoldFontFamily,
                     style = Typography.labelSmall,
-                    fontSize = 50.sp,
-                    color = green)
+                    fontSize = 70.sp,
+                    color = salmon)
             }
         }
         Row {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .fillMaxHeight()
+                    .padding(0.dp, 0.dp, 0.dp, 200.dp)
                     .clickable(onClick = {
                         welcomeViewModel.moveToFrontPage(
                             navigateFrontPage

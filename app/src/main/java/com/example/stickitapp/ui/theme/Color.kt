@@ -12,6 +12,7 @@ val Pink40 = Color(0xFF7D5260)
 
 // Our theme
 val Dusty = Color(0xFFE0D5C6)
+val burger = Color(0xFFFFFFE8)
 val yellowy = Color(0xFFD9A05B)
 val green = Color(0xFF79C143)
 val ash = Color(0xFF504A3E)
