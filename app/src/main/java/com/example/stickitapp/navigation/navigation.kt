@@ -18,12 +18,12 @@ fun Navigation() {
             Welcome(navigateFrontPage = { navController.navigate("frontPage") })
         }
         composable("frontPage"){
-            FrontPage(navigateLoadingScreen = { navController.navigate("loadingScreen") })
+            FrontPage(navigateLoadingScreen = { navController.navigate("LoadingScreen") })
         }
-        composable("loadingScreen"){
+        composable("LoadingScreen"){
             LoadingScreen(navigateChallenge = { navController.navigate("challenge") })
         }
-        composable("FrontPage"){
+        composable("challenge"){
             Challenge(navigateFrontPage = { navController.navigate("frontPage") })
         }
     }
