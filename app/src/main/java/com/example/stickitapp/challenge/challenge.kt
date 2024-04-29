@@ -8,6 +8,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
@@ -28,7 +29,7 @@ import com.example.stickitapp.ui.theme.yellowy
 
 @Composable
 fun Challenge(navigateFrontPage: () -> Unit) {
-    val challengeViewModel = viewModel<ChallengeViewModel>()
+    val challengeViewModel = remember { ChallengeViewModel().apply { generateRandomChallenge() } }
 
     Box(
         Modifier.background(color = burger)
@@ -48,13 +49,13 @@ fun Challenge(navigateFrontPage: () -> Unit) {
                     text = "Your challenge is:",
                     fontFamily = jaldiBoldFontFamily,
                     style = Typography.labelSmall,
-                    fontSize = 50.sp,
+                    fontSize = 40.sp,
                     color = salmon
                 )
             }
             Row(
                 modifier = Modifier.padding(start = 25.dp, end = 25.dp)
-                    .fillMaxHeight(0.15f)
+                    .fillMaxHeight(0.25f)
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
@@ -63,17 +64,15 @@ fun Challenge(navigateFrontPage: () -> Unit) {
                     text = challengeViewModel.currentChallenge.value,
                     style = TextStyle(fontWeight = FontWeight.Bold),
                     fontFamily = jaldiBoldFontFamily,
-                    fontSize = 30.sp,
+                    fontSize = 28.sp,
                     textAlign = TextAlign.Center,
                     color = ash
                 )
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
-
             Row(
                 modifier = Modifier
-                    .fillMaxHeight(0.2f)
+                    .fillMaxHeight(0.15f)
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
@@ -93,11 +92,14 @@ fun Challenge(navigateFrontPage: () -> Unit) {
                         "Generate Random Challenge",
                         fontFamily = jaldiBoldFontFamily,
                         style = Typography.labelSmall,
-                        fontSize = 20.sp,
+                        fontSize = 22.sp,
                         color = salmon
                     )
                 }
             }
+
+            Spacer(modifier = Modifier.height(30.dp))
+
             Row(
                 modifier = Modifier
                     .fillMaxHeight(0.25f)
@@ -126,7 +128,7 @@ fun Challenge(navigateFrontPage: () -> Unit) {
                         if (challengeViewModel.isTimerRunning.value) "Stop Timer" else "Start Timer",
                         fontFamily = jaldiBoldFontFamily,
                         style = Typography.labelSmall,
-                        fontSize = 20.sp,
+                        fontSize = 22.sp,
                         color = salmon
                     )
                 }
@@ -151,7 +153,7 @@ fun Challenge(navigateFrontPage: () -> Unit) {
                         "Back to Front Page",
                         fontFamily = jaldiBoldFontFamily,
                         style = Typography.labelSmall,
-                        fontSize = 20.sp,
+                        fontSize = 22.sp,
                         color = salmon
                     )
                 }
@@ -173,7 +175,7 @@ fun Timer(timerState: TimerState) {
         text = "Time: $minutes:${String.format("%02d", seconds)}",
         style = TextStyle(fontWeight = FontWeight.Bold),
         fontFamily = jaldiBoldFontFamily,
-        fontSize = 30.sp,
+        fontSize = 40.sp,
         color = ash
     )
 }

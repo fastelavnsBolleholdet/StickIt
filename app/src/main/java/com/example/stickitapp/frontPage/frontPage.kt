@@ -1,5 +1,6 @@
 package com.example.stickitapp.frontPage
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -36,6 +37,7 @@ import com.example.stickitapp.ui.theme.playFairDisplayFontFamily
 import com.example.stickitapp.ui.theme.salmon
 import com.example.stickitapp.ui.theme.yellowy
 
+@SuppressLint("SuspiciousIndentation")
 @Composable
 fun FrontPage(navigateLoadingScreen: () -> Unit) {
 
