@@ -2,6 +2,7 @@ package com.example.stickitapp.loadingScreen
 
 import android.annotation.SuppressLint
 import android.webkit.WebView
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -14,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.stickitapp.ui.theme.loadingScreen
 import com.example.stickitapp.welcome.welcomeViewModel
 
 @SuppressLint("SetJavaScriptEnabled")
@@ -50,6 +52,7 @@ fun LoadingScreen(navigateChallenge: () -> Unit) {
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
+            .background(color = loadingScreen)
             .padding(0.dp, 0.dp, 0.dp, 200.dp)
             .clickable(onClick = {
                 loadingScreenViewModel.moveToChallenge(navigateChallenge)
