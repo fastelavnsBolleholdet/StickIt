@@ -6,13 +6,10 @@ import androidx.lifecycle.ViewModel
 
 class welcomeViewModel: ViewModel() {
 
-    fun moveToFrontpage(navigateFrontPage: () -> Unit) {
+    fun moveToFrontPage(navigateFrontPage: () -> Unit) {
+
+        navigateFrontPage()
 
     }
 
-}
-@Preview
-@Composable
-fun welcomePreview () {
-    welcome(navigateFrontPage = {})
 }

@@ -1,4 +1,13 @@
 package com.example.stickitapp.loadingScreen
 
-class loadingScreenViewModel {
+import androidx.lifecycle.ViewModel
+
+class loadingScreenViewModel: ViewModel() {
+
+    fun moveToChallenge(navigateChallenge: () -> Unit) {
+
+        navigateChallenge()
+
+    }
+
 }

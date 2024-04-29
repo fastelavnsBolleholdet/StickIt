@@ -2,5 +2,11 @@ package com.example.stickitapp.challange
 
 import androidx.lifecycle.ViewModel
 
-class challangeViewModel: ViewModel() {
+class challengeViewModel: ViewModel() {
+
+    fun moveToLoadingScreen(navigateFrontPage: () -> Unit) {
+
+        navigateFrontPage()
+
+    }
 }
