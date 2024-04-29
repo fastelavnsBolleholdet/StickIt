@@ -48,7 +48,7 @@ fun NoodleChopsticks(modifier: Modifier = Modifier) {
 fun LoadingScreen(navigateChallenge: () -> Unit) {
     val loadingScreenViewModel = viewModel<loadingScreenViewModel>()
     LaunchedEffect(Unit) {
-        delay(3000) // 3-second delay
+        delay(5000) // 3-second delay
         loadingScreenViewModel.moveToChallenge(navigateChallenge) // Navigate to the next screen
     }
     Box(
