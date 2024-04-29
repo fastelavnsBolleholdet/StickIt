@@ -25,10 +25,16 @@ class ChallengeViewModel: ViewModel() {
         "Build a house of cards using chopsticks.",
         "Thread a needle with chopsticks.",
         "Create a tower with marshmallows and toothpicks.",
-        "Balance an egg on a spoon held by chopsticks and walk 10 steps without dropping it.",
+        "Balance an egg on chopsticks and walk 10 steps.",
         "Use chopsticks to write your name in rice.",
         "Pick up as many jellybeans as possible in 30 seconds.",
-        "Scoop a scoop of ice cream onto a cone using chopsticks."
+        "Scoop ice cream onto a cone using chopsticks.",
+        "Eat spaghetti with chopsticks blindfolded.",
+        "Peel a banana using only chopsticks.",
+        "Paint a masterpiece with chopsticks as your brushes.",
+        "Type a text message using chopsticks as your stylus.",
+        "Catch a fly mid-air using chopsticks.",
+        "Knit a scarf using chopsticks as knitting needles."
     )
 
     fun generateRandomChallenge() {
