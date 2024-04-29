@@ -1,6 +1,5 @@
 package com.example.stickitapp.challange
 
-import androidx.compose.material3.Button
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -9,9 +8,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 fun Challenge(navigateFrontPage: () -> Unit) {
 
     val challengeViewModel = viewModel<challengeViewModel>()
-    Button(onClick = { challengeViewModel.moveToFrontPage(navigateFrontPage) }) {
-        
-    }
+
 }
 
 @Preview
