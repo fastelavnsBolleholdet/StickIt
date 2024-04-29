@@ -52,7 +52,7 @@ fun FrontPage(navigateLoadingScreen: () -> Unit) {
     ) {
         Box {
             Text(
-                text = "This app works by giving you a chopstick challenge for you to complete in a giving timeframe. If you are lucky you will get a rating",
+                text = "This app works by giving you a chopstick challenge for you to complete in a given timeframe. If you are lucky you will get a rating",
                 textAlign = TextAlign.Center
             )
         }
