@@ -11,5 +11,4 @@ class welcomeViewModel: ViewModel() {
         navigateFrontPage()
 
     }
-
 }
