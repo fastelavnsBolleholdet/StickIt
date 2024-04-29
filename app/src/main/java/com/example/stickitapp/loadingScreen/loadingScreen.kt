@@ -2,19 +2,23 @@ package com.example.stickitapp.loadingScreen
 
 import android.annotation.SuppressLint
 import android.webkit.WebView
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.stickitapp.ui.theme.noodleBoxColor
 import com.example.stickitapp.welcome.welcomeViewModel
+import kotlinx.coroutines.delay
 
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
@@ -37,24 +41,25 @@ fun NoodleChopsticks(modifier: Modifier = Modifier) {
             },
             update = { webView ->
                 // Load the GIF into the WebView from assets or a URL
-                webView.loadUrl("https://cdn.dribbble.com/users/506149/screenshots/5867973/chopsticks.gif") // Or a URL
-            }, // Optional: Adjust the modifier as needed
+                webView.loadUrl("https://i.pinimg.com/originals/10/61/7a/10617a1214f2053a3b137a87f49bef8c.gif") // Or a URL
+            }
         )
     }
 }
 @Composable
 fun LoadingScreen(navigateChallenge: () -> Unit) {
-
     val loadingScreenViewModel = viewModel<loadingScreenViewModel>()
+    LaunchedEffect(Unit) {
+        delay(5000) // 5-second delay
+        loadingScreenViewModel.moveToChallenge(navigateChallenge) // Navigate to the next screen
+    }
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
-            .padding(0.dp, 0.dp, 0.dp, 200.dp)
-            .clickable(onClick = {
-                loadingScreenViewModel.moveToChallenge(navigateChallenge)
-            }
-            )) {
+            .padding(0.dp, 0.dp, 0.dp, 0.dp)
+            .background(color = noodleBoxColor)
+            ) {
         NoodleChopsticks()
     }
 }
